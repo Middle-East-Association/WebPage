@@ -1,0 +1,25 @@
+{
+  "name": "middle-east-association",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "cross-env TMPDIR=/tmp nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "lucide-vue-next": "^0.468.0",
+    "nuxt": "^3.14.1592",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@nuxt/fonts": "^0.10.3",
+    "@nuxtjs/robots": "^5.1.0",
+    "@nuxtjs/sitemap": "^7.0.0",
+    "@nuxtjs/tailwindcss": "^6.12.2",
+    "cross-env": "^7.0.3"
+  }
+}
