@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Users, CalendarDays, UserCheck, Briefcase, Globe, Lightbulb } from 'lucide-vue-next'
 
-useSeoMeta({
+usePageSeo({
   title: 'Young Professionals Group',
   description:
     'The MEA Young Professionals Group nurtures emerging talent under 35 with access to senior decision-makers, expert analysis, mentorship, and strategic networks across UK-MENA affairs.',

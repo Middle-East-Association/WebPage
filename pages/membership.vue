@@ -3,7 +3,7 @@ import { Check, ArrowRight } from 'lucide-vue-next'
 import { membershipTiers, memberBenefits } from '~/data/membership'
 import { site } from '~/data/site'
 
-useSeoMeta({
+usePageSeo({
   title: 'Membership',
   description:
     'Join a distinguished community of leaders shaping UK-MENA relations. Access senior decision-makers, exclusive briefings, and strategic networking opportunities across four membership tiers.',

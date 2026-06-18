@@ -16,8 +16,16 @@ export interface UpcomingEvent {
   date: string // human readable, as shown on the original
   startDate: string // ISO 8601, for structured data and date sorting
   time?: string
-  location?: string
+  location?: string // display string shown in the UI (e.g. "Online", "House of Commons")
   registerUrl?: string
+  // --- Structured-data fields (Google Event rich results) ---
+  // Fill these in per event for valid, non-misleading markup. `venue` = the place name,
+  // `city` = the locality used as addressLocality. Defaults to London (the MEA's home city)
+  // when unset — VERIFY per event, especially multi-city ones like the UK Roadshow.
+  venue?: string
+  city?: string
+  endDate?: string // ISO 8601
+  isOnline?: boolean
 }
 
 export const flagshipEvents: FlagshipEvent[] = [

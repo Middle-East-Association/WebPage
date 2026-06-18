@@ -1,12 +1,27 @@
 <script setup lang="ts">
 import { Linkedin, Mail } from 'lucide-vue-next'
-import { site } from '~/data/site'
+import { nav, site } from '~/data/site'
 </script>
 
 <template>
   <footer class="w-full bg-primary text-primary-foreground">
-    <div class="max-w-[100rem] mx-auto px-8 lg:px-16 py-6 flex items-center justify-between">
-      <h2 class="font-heading text-xl">{{ site.shortName }}</h2>
+    <div class="max-w-[100rem] mx-auto px-8 lg:px-16 py-10 flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+      <div>
+        <h2 class="font-heading text-xl mb-1">{{ site.shortName }}</h2>
+        <p class="font-paragraph text-sm text-primary-foreground/70">London, United Kingdom · Established {{ site.established }}</p>
+      </div>
+
+      <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
+        <NuxtLink
+          v-for="item in nav"
+          :key="item.to"
+          :to="item.to"
+          class="font-paragraph text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+        >
+          {{ item.label }}
+        </NuxtLink>
+      </nav>
+
       <div class="flex gap-6">
         <a
           :href="site.social.linkedin"

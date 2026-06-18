@@ -4,6 +4,21 @@ export const site = {
   established: 1961,
   tagline:
     'The Middle East Association fosters dialogue, understanding, and collaboration across policy, business, and culture.',
+  // Public location. No street address or phone is published; keep to city + country
+  // so structured data and NAP stay consistent and never fabricated.
+  address: {
+    locality: 'London',
+    country: 'GB',
+  },
+  // Topical scope — surfaced in Organization.knowsAbout for entity/topical relevance.
+  knowsAbout: [
+    'UK-Middle East trade',
+    'UK-GCC relations',
+    'Middle East and North Africa business',
+    'International trade missions',
+    'Middle East policy and diplomacy',
+  ],
+  twitterHandle: '@_theMEA',
   emails: {
     general: 'info@the-mea.com',
     membership: 'membership@the-mea.com',
