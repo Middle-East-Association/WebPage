@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Eye, Handshake, Lightbulb } from 'lucide-vue-next'
+import { Eye, Handshake, Lightbulb, ArrowRight } from 'lucide-vue-next'
 
-useSeoMeta({
+usePageSeo({
   title: 'Partnership & Sponsorship',
   description:
     'Partner with the Middle East Association to maximise brand visibility, thought leadership, and senior-level engagement across flagship UK-MENA events and topic-led briefings.',
@@ -45,6 +45,26 @@ const cards = [
           <p class="font-paragraph text-lg text-secondary-foreground/80 max-w-3xl text-left">
             Sponsorship packages are designed to maximise brand visibility, thought leadership, and senior-level engagement, translating alignment with the MEA into meaningful relationships and long-term strategic value. Opportunities are available across flagship MEA events, as well as through exclusive sponsorship of smaller, topic-led briefings focused on timely and relevant issues. Current sponsors and partners include Sovereign Group, Smart Currency Business, AEI Saudi and Womble Bond Dickinson. Previous sponsors and partners include The National, M&amp;C Saatchi World Services, Initium Corporate Finance, Chatila Jewellers and XE.
           </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <NuxtLink
+              to="/events"
+              class="inline-flex items-center gap-1.5 font-paragraph text-base font-semibold text-primary hover:underline"
+            >
+              Explore our flagship events<ArrowRight class="w-4 h-4" />
+            </NuxtLink>
+            <NuxtLink
+              to="/membership"
+              class="inline-flex items-center gap-1.5 font-paragraph text-base font-semibold text-primary hover:underline"
+            >
+              Become a member<ArrowRight class="w-4 h-4" />
+            </NuxtLink>
+            <NuxtLink
+              to="/contact"
+              class="inline-flex items-center gap-1.5 font-paragraph text-base font-semibold text-primary hover:underline"
+            >
+              Discuss a partnership<ArrowRight class="w-4 h-4" />
+            </NuxtLink>
+          </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 shadow-[12px_12px_4px_0px_#d9d9d9]">
           <div v-for="c in cards" :key="c.title" class="bg-secondary p-8 border-l-4 border-primary">

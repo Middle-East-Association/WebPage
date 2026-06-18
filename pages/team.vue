@@ -2,10 +2,33 @@
 import { ChevronDown, Mail } from 'lucide-vue-next'
 import { team } from '~/data/team'
 
-useSeoMeta({
+usePageSeo({
   title: 'Our Team',
   description:
     'Meet the dedicated professionals who lead The Middle East Association — former ambassadors, business leaders and regional experts driving our mission to strengthen UK-MENA relations.',
+})
+
+// Person structured data — surfaces the team's credentials (former ambassadors, business
+// leaders, MENA experts) to search engines as a strong E-E-A-T / entity signal.
+const { url } = useSiteConfig()
+const base = (url || '').replace(/\/$/, '')
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': team.map((m) => ({
+          '@type': 'Person',
+          name: m.name,
+          jobTitle: m.role,
+          worksFor: { '@id': `${base}/#organization` },
+          image: `${base}${m.image}`,
+          ...(m.email ? { email: m.email } : {}),
+        })),
+      }),
+    },
+  ],
 })
 
 const open = reactive<Record<number, boolean>>({})
@@ -35,7 +58,7 @@ const toggle = (i: number) => (open[i] = !open[i])
               <div class="relative overflow-hidden bg-secondary flex-shrink-0">
                 <img
                   :src="member.image"
-                  :alt="member.name"
+                  :alt="`${member.name}, ${member.role} at The Middle East Association`"
                   width="403"
                   height="320"
                   loading="lazy"

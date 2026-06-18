@@ -12,6 +12,9 @@ The original Wix site rendered all content with client-side JavaScript, so crawl
 - Generates **`sitemap.xml`** and **`robots.txt`** automatically.
 - **Self-hosts fonts** (Playfair Display + Inter) and serves **optimised WebP images** for fast Core Web Vitals.
 - Uses **semantic HTML** (one `<h1>` per page, descriptive `alt` text).
+- Adds **`Person` (team) structured data**, enriched `Organization` (address, contactPoint, areaServed, knowsAbout) and a **responsive hero** with `srcset` + preload.
+
+📋 Full SEO audit, implementation status and remaining work: [`docs/seo-audit.md`](docs/seo-audit.md).
 
 ## Develop
 

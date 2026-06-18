@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Calendar, Clock, MapPin, ArrowRight } from 'lucide-vue-next'
 import { flagshipEvents, upcomingEvents, pastEventImages, type EventCategory } from '~/data/events'
-import { site } from '~/data/site'
 
 // Badge styling per event category, kept on-brand (purple / gold / cream).
 const categoryBadge: Record<EventCategory, string> = {
@@ -11,7 +10,7 @@ const categoryBadge: Record<EventCategory, string> = {
   'Conference': 'bg-primary text-primary-foreground',
 }
 
-useSeoMeta({
+usePageSeo({
   title: 'Events & Briefings',
   description:
     'The Middle East Association delivers a year-round programme of high-level events, briefings and discussions fostering informed debate and engagement on developments across the Middle East and North Africa.',
@@ -26,26 +25,35 @@ useHead({
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
-        '@graph': upcomingEvents.map((e) => ({
-          '@type': 'Event',
-          name: e.title,
-          startDate: e.startDate,
-          eventStatus: 'https://schema.org/EventScheduled',
-          ...(e.location
-            ? {
-                eventAttendanceMode:
-                  e.location.toLowerCase() === 'online'
-                    ? 'https://schema.org/OnlineEventAttendanceMode'
-                    : 'https://schema.org/OfflineEventAttendanceMode',
-                location:
-                  e.location.toLowerCase() === 'online'
-                    ? { '@type': 'VirtualLocation', url: e.registerUrl || `${base}/events` }
-                    : { '@type': 'Place', name: e.location, address: { '@type': 'PostalAddress', addressLocality: e.location, addressCountry: 'GB' } },
-              }
-            : {}),
-          organizer: { '@type': 'Organization', name: site.name, url: `${base}/` },
-          ...(e.registerUrl ? { url: e.registerUrl } : { url: `${base}/events` }),
-        })),
+        '@graph': upcomingEvents.map((e) => {
+          const online = e.isOnline || e.location?.toLowerCase() === 'online'
+          return {
+            '@type': 'Event',
+            name: e.title,
+            startDate: e.startDate,
+            ...(e.endDate ? { endDate: e.endDate } : {}),
+            eventStatus: 'https://schema.org/EventScheduled',
+            eventAttendanceMode: online
+              ? 'https://schema.org/OnlineEventAttendanceMode'
+              : 'https://schema.org/OfflineEventAttendanceMode',
+            location: online
+              ? { '@type': 'VirtualLocation', url: e.registerUrl || `${base}/events` }
+              : {
+                  '@type': 'Place',
+                  // Real venue name when known; otherwise the city (defaults to London — verify per event).
+                  name: e.venue || e.city || 'London',
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: e.city || 'London',
+                    addressCountry: 'GB',
+                  },
+                },
+            description: `${e.category} event hosted by The Middle East Association, fostering UK–Middle East trade, business and policy dialogue.`,
+            image: [`${base}/og-image.jpg`],
+            organizer: { '@id': `${base}/#organization` },
+            url: e.registerUrl || `${base}/events`,
+          }
+        }),
       }),
     },
   ],
@@ -63,6 +71,7 @@ useHead({
             The Middle East Association delivers a year-round programme of high-level events, briefings and discussions that foster informed debate and meaningful engagement on developments across the Middle East and North Africa.
           </p>
         </div>
+        <h2 class="font-heading text-2xl lg:text-3xl mb-6 text-primary-foreground">Flagship Events</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           <div
             v-for="ev in flagshipEvents"
@@ -71,7 +80,7 @@ useHead({
           >
             <div class="absolute top-0 right-0 w-20 h-20 bg-primary-foreground/10 rounded-full transform translate-x-1/3 -translate-y-1/3 group-hover:scale-110 transition-transform duration-500" />
             <div class="text-4xl mb-3 relative z-10 group-hover:scale-110 transition-transform duration-300">{{ ev.emoji }}</div>
-            <h2 class="font-heading text-lg mb-2 text-primary-foreground relative z-10">{{ ev.title }}</h2>
+            <h3 class="font-heading text-lg mb-2 text-primary-foreground relative z-10">{{ ev.title }}</h3>
             <p class="text-primary-foreground/80 text-sm leading-relaxed relative z-10">{{ ev.description }}</p>
           </div>
         </div>

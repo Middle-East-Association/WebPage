@@ -23,9 +23,45 @@ useHead({
             alternateName: 'MEA',
             url: `${base}/`,
             logo: `${base}/logo.png`,
+            image: `${base}/og-image.jpg`,
             description: site.tagline,
+            slogan: site.tagline,
             foundingDate: String(site.established),
+            foundingLocation: {
+              '@type': 'Place',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: site.address.locality,
+                addressCountry: site.address.country,
+              },
+            },
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: site.address.locality,
+              addressCountry: site.address.country,
+            },
+            areaServed: [
+              { '@type': 'Country', name: 'United Kingdom' },
+              { '@type': 'Place', name: 'Middle East and North Africa' },
+            ],
+            knowsAbout: site.knowsAbout,
             email: site.emails.general,
+            contactPoint: [
+              {
+                '@type': 'ContactPoint',
+                contactType: 'general enquiries',
+                email: site.emails.general,
+                areaServed: 'GB',
+                availableLanguage: 'en',
+              },
+              {
+                '@type': 'ContactPoint',
+                contactType: 'membership enquiries',
+                email: site.emails.membership,
+                areaServed: 'GB',
+                availableLanguage: 'en',
+              },
+            ],
             sameAs: [site.social.linkedin, site.social.x],
           },
           {
@@ -46,8 +82,14 @@ useSeoMeta({
   ogSiteName: site.name,
   ogType: 'website',
   ogUrl: canonical,
+  ogLocale: 'en_GB',
   twitterCard: 'summary_large_image',
+  twitterSite: site.twitterHandle,
   ogImage: () => `${base}/og-image.jpg`,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageType: 'image/jpeg',
+  ogImageAlt: site.name,
   twitterImage: () => `${base}/og-image.jpg`,
 })
 </script>

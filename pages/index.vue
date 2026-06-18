@@ -1,12 +1,26 @@
 <script setup lang="ts">
 import { Globe, Users, Calendar, ArrowUpRight, ChevronRight } from 'lucide-vue-next'
-import { site } from '~/data/site'
 
-useSeoMeta({
-  title: 'Home',
-  description: site.tagline + ' Established 1961, fostering trade, education, investment, and cultural understanding between the UK and the Middle East.',
-  ogTitle: `Home | ${site.name}`,
-  ogDescription: site.tagline,
+usePageSeo({
+  title: 'UK–Middle East Trade, Business & Policy',
+  description:
+    'The Middle East Association connects the UK and the Middle East through trade, investment, policy and cultural dialogue. A trusted business association established in 1961.',
+})
+
+// Preload the responsive hero (LCP element) so the browser fetches the right variant early.
+useHead({
+  link: [
+    {
+      rel: 'preload',
+      as: 'image',
+      type: 'image/webp',
+      href: '/images/hero-middle-east-1280.webp',
+      imagesrcset:
+        '/images/hero-middle-east-768.webp 768w, /images/hero-middle-east-1280.webp 1280w, /images/hero-middle-east.webp 1920w',
+      imagesizes: '100vw',
+      fetchpriority: 'high',
+    },
+  ],
 })
 
 const purpose = [
@@ -74,6 +88,8 @@ const getInvolved = [
       <div class="absolute inset-0 z-0">
         <img
           src="/images/hero-middle-east.webp"
+          srcset="/images/hero-middle-east-768.webp 768w, /images/hero-middle-east-1280.webp 1280w, /images/hero-middle-east.webp 1920w"
+          sizes="100vw"
           alt="Detail of traditional Middle Eastern textiles and carpets"
           class="w-full h-full object-cover scale-105"
           width="1920"
@@ -91,11 +107,14 @@ const getInvolved = [
             <div class="h-px w-12 bg-primary-foreground/60" />
             <span class="text-primary-foreground/80 uppercase tracking-[0.2em] text-xs font-medium">Established 1961</span>
           </div>
-          <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-tight">
+          <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight">
             The Middle East Association
+            <span class="block font-paragraph font-light text-xl md:text-2xl lg:text-3xl text-white/80 mt-5 leading-snug">
+              UK–Middle East trade, business &amp; policy since 1961
+            </span>
           </h1>
           <p class="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed font-light">
-            The Middle East Association fosters dialogue, understanding, and collaboration across policy, business, and culture.
+            We foster dialogue, understanding, and collaboration across policy, business, and culture — connecting the UK and the Middle East through trade, investment, and partnership.
           </p>
         </div>
       </div>

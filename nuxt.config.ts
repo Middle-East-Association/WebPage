@@ -22,8 +22,9 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   // Canonical site identity. Override the URL on Vercel with the NUXT_SITE_URL env var.
+  // Apex domain (no www) is the confirmed canonical host — add a www->apex 301 in Vercel.
   site: {
-    url: process.env.NUXT_SITE_URL || 'https://www.the-mea.com',
+    url: process.env.NUXT_SITE_URL || 'https://the-mea.com',
     name: 'The Middle East Association',
     description:
       'The Middle East Association fosters dialogue, understanding, and collaboration across policy, business, and culture between the UK and the Middle East. Established 1961.',
