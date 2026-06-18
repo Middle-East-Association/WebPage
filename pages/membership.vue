@@ -15,10 +15,10 @@ const photos = ['/images/membership-1.webp', '/images/membership-2.webp', '/imag
 <template>
   <div>
     <!-- Hero -->
-    <section class="w-full bg-primary py-12 lg:py-20">
+    <section class="w-full bg-primary py-20 lg:py-32">
       <div class="max-w-[100rem] mx-auto px-8 lg:px-16">
-        <div class="max-w-3xl">
-          <h1 class="font-heading text-4xl lg:text-5xl mb-4 text-primary-foreground">Membership</h1>
+        <div class="max-w-4xl">
+          <h1 class="font-heading text-5xl lg:text-6xl mb-6 text-primary-foreground">Membership</h1>
           <p class="font-paragraph text-lg text-primary-foreground/90">
             Join a distinguished community of leaders shaping UK-MENA relations. Access senior decision-makers, exclusive briefings, and strategic networking opportunities.
           </p>

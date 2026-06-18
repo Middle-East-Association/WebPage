@@ -4,12 +4,19 @@ export interface FlagshipEvent {
   description: string
 }
 
+export type EventCategory =
+  | 'Flagship'
+  | 'Young Professionals'
+  | 'Regional Spotlight'
+  | 'Conference'
+
 export interface UpcomingEvent {
   title: string
+  category: EventCategory
   date: string // human readable, as shown on the original
-  time: string
-  location: string
-  startDate: string // ISO 8601, for structured data
+  startDate: string // ISO 8601, for structured data and date sorting
+  time?: string
+  location?: string
   registerUrl?: string
 }
 
@@ -36,51 +43,70 @@ export const flagshipEvents: FlagshipEvent[] = [
   },
 ]
 
+// Ordered soonest-first by startDate.
 export const upcomingEvents: UpcomingEvent[] = [
   {
-    title: 'Cross Party Parliamentary Event',
-    date: 'Feb 03, 2027',
-    time: '6:30 PM',
-    location: 'London',
-    startDate: '2027-02-03T18:30:00',
-  },
-  {
-    title: 'MENA Regional Update Briefing',
-    date: 'Apr 10, 2026',
-    time: '12:00 PM',
-    location: 'Online',
-    startDate: '2026-04-10T12:00:00',
-  },
-  {
-    title: 'Young Professionals Event',
-    date: 'May 01, 2026',
-    time: '6:30 PM',
-    location: 'London',
-    startDate: '2026-05-01T18:30:00',
-    registerUrl: 'https://buytickets.at/themiddleeastassociation/2087337',
-  },
-  {
-    title: 'Ambassadors Reception',
+    title: "Ambassadors' Reception",
+    category: 'Flagship',
     date: 'Jun 29, 2026',
-    time: '6:30 PM',
-    location: 'London',
-    startDate: '2026-06-29T18:30:00',
+    startDate: '2026-06-29',
   },
   {
-    title: "Cybersecurity & Digital Resilience in the Middle East’s Tech Revolution",
-    date: 'May 11, 2026',
-    time: '2:00 PM',
-    location: 'London',
-    startDate: '2026-05-11T14:00:00',
-    registerUrl: 'https://buytickets.at/themiddleeastassociation/2113094',
+    title: 'YPG Dinner Party',
+    category: 'Young Professionals',
+    date: 'Jul 02, 2026',
+    startDate: '2026-07-02',
   },
   {
-    title: 'Gala Dinner',
+    title: 'UK–GCC Free Trade Agreement Briefing',
+    category: 'Conference',
+    date: 'Jul 06, 2026',
+    startDate: '2026-07-06',
+  },
+  {
+    title: 'YPG Summer Drinks',
+    category: 'Young Professionals',
+    date: 'Jul 16, 2026',
+    startDate: '2026-07-16',
+  },
+  {
+    title: 'UK Roadshow 2026',
+    category: 'Conference',
+    date: 'Jul 20, 2026',
+    startDate: '2026-07-20',
+    registerUrl: 'https://uk-roadshow.the-mea.com/',
+  },
+  {
+    title: 'Diplomacy Unpacked: Insights, Careers & Connections with RUSI NextGen',
+    category: 'Young Professionals',
+    date: 'Sep 08, 2026',
+    startDate: '2026-09-08',
+  },
+  {
+    title: 'Iraq & Syria Business Reception with the MEA, Mansion House Reception',
+    category: 'Regional Spotlight',
+    date: 'Oct 06, 2026',
+    startDate: '2026-10-06',
+  },
+  {
+    title: 'Gala Dinner 2026',
+    category: 'Flagship',
     date: 'Oct 12, 2026',
-    time: '7:30 PM',
-    location: 'London',
-    startDate: '2026-10-12T19:30:00',
+    startDate: '2026-10-12',
+    registerUrl: 'https://buytickets.at/themiddleeastassociation/2160261',
   },
-]
+  {
+    title: 'Cross-Party Parliamentary Reception (House of Commons)',
+    category: 'Flagship',
+    date: 'Feb 03, 2027',
+    startDate: '2027-02-03',
+  },
+  {
+    title: 'MEA Technology Conference',
+    category: 'Conference',
+    date: 'May 2027',
+    startDate: '2027-05-01',
+  },
+].sort((a, b) => a.startDate.localeCompare(b.startDate))
 
 export const pastEventImages: string[] = Array.from({ length: 12 }, (_, i) => `/images/event-${i + 1}.webp`)

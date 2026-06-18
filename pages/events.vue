@@ -1,7 +1,15 @@
 <script setup lang="ts">
 import { Calendar, Clock, MapPin, ArrowRight } from 'lucide-vue-next'
-import { flagshipEvents, upcomingEvents, pastEventImages } from '~/data/events'
+import { flagshipEvents, upcomingEvents, pastEventImages, type EventCategory } from '~/data/events'
 import { site } from '~/data/site'
+
+// Badge styling per event category, kept on-brand (purple / gold / cream).
+const categoryBadge: Record<EventCategory, string> = {
+  'Flagship': 'bg-softaccent/25 text-primary',
+  'Young Professionals': 'bg-primary/10 text-primary',
+  'Regional Spotlight': 'bg-secondary text-primary border border-bordersubtle',
+  'Conference': 'bg-primary text-primary-foreground',
+}
 
 useSeoMeta({
   title: 'Events & Briefings',
@@ -23,14 +31,18 @@ useHead({
           name: e.title,
           startDate: e.startDate,
           eventStatus: 'https://schema.org/EventScheduled',
-          eventAttendanceMode:
-            e.location.toLowerCase() === 'online'
-              ? 'https://schema.org/OnlineEventAttendanceMode'
-              : 'https://schema.org/OfflineEventAttendanceMode',
-          location:
-            e.location.toLowerCase() === 'online'
-              ? { '@type': 'VirtualLocation', url: e.registerUrl || `${base}/events` }
-              : { '@type': 'Place', name: e.location, address: { '@type': 'PostalAddress', addressLocality: e.location, addressCountry: 'GB' } },
+          ...(e.location
+            ? {
+                eventAttendanceMode:
+                  e.location.toLowerCase() === 'online'
+                    ? 'https://schema.org/OnlineEventAttendanceMode'
+                    : 'https://schema.org/OfflineEventAttendanceMode',
+                location:
+                  e.location.toLowerCase() === 'online'
+                    ? { '@type': 'VirtualLocation', url: e.registerUrl || `${base}/events` }
+                    : { '@type': 'Place', name: e.location, address: { '@type': 'PostalAddress', addressLocality: e.location, addressCountry: 'GB' } },
+              }
+            : {}),
           organizer: { '@type': 'Organization', name: site.name, url: `${base}/` },
           ...(e.registerUrl ? { url: e.registerUrl } : { url: `${base}/events` }),
         })),
@@ -75,40 +87,40 @@ useHead({
             Join us for our upcoming events and be part of important conversations shaping the Middle East and North Africa region.
           </p>
         </div>
-        <div class="space-y-6">
-          <article
+        <ul class="border-y border-primary/10 divide-y divide-primary/10">
+          <li
             v-for="ev in upcomingEvents"
             :key="ev.title"
-            class="group border border-primary/20 rounded-lg overflow-hidden hover:border-primary/40 hover:shadow-lg transition-all duration-300 bg-white"
+            class="group flex flex-col gap-2 py-4 sm:flex-row sm:items-center sm:gap-5 sm:py-5 transition-colors hover:bg-secondary/40 -mx-3 px-3 rounded-md"
           >
-            <div class="flex flex-col md:flex-row">
-              <div class="flex-1 p-8 flex flex-col justify-between w-full">
-                <h3 class="font-heading text-2xl mb-3 text-primary group-hover:text-primary/80 transition-colors">{{ ev.title }}</h3>
-                <div class="flex flex-col sm:flex-row gap-6 text-sm text-primary/60 mb-6">
-                  <div class="flex items-center gap-2">
-                    <Calendar class="w-4 h-4 text-softaccent" />
-                    <time :datetime="ev.startDate">{{ ev.date }}</time>
-                  </div>
-                  <span class="flex items-center gap-2">
-                    <Clock class="w-4 h-4 text-softaccent" />{{ ev.time }}
-                  </span>
-                  <div class="flex items-center gap-2">
-                    <MapPin class="w-4 h-4 text-softaccent" />{{ ev.location }}
-                  </div>
-                </div>
-                <a
-                  v-if="ev.registerUrl"
-                  :href="ev.registerUrl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-softaccent hover:text-softaccent/80 font-semibold transition-colors w-fit"
-                >
-                  Register Now<ArrowRight class="w-4 h-4" />
-                </a>
-              </div>
+            <div class="flex items-center gap-2 text-sm font-medium text-primary/60 sm:w-32 sm:shrink-0">
+              <Calendar class="w-4 h-4 text-softaccent shrink-0" />
+              <time :datetime="ev.startDate">{{ ev.date }}</time>
             </div>
-          </article>
-        </div>
+            <h3 class="flex-1 font-heading text-lg lg:text-xl text-primary transition-colors group-hover:text-primary/70">{{ ev.title }}</h3>
+            <div class="flex items-center gap-3">
+              <span
+                :class="categoryBadge[ev.category]"
+                class="inline-flex shrink-0 items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide"
+              >{{ ev.category }}</span>
+              <span v-if="ev.time" class="hidden md:flex items-center gap-1.5 text-sm text-primary/60">
+                <Clock class="w-4 h-4 text-softaccent" />{{ ev.time }}
+              </span>
+              <span v-if="ev.location" class="hidden md:flex items-center gap-1.5 text-sm text-primary/60">
+                <MapPin class="w-4 h-4 text-softaccent" />{{ ev.location }}
+              </span>
+              <a
+                v-if="ev.registerUrl"
+                :href="ev.registerUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group/btn inline-flex shrink-0 items-center gap-1.5 rounded-full bg-softaccent px-4 py-1.5 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                Register<ArrowRight class="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5" />
+              </a>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
