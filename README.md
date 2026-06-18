@@ -38,6 +38,8 @@ npm run preview
    - The default is `https://www.the-mea.com` (used only if the env var is unset).
 3. Deploy. No other configuration is required.
 
+Every push to `main` (or merged PR) triggers a fresh production deployment on Vercel automatically.
+
 ## Editing content
 
 All page content lives in plain data files under [`data/`](./data):
