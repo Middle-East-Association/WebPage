@@ -21,7 +21,7 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Justin Mundy',
-    role: 'Honorary Vice President',
+    role: 'Advisor',
     image: '/images/team-justin-mundy.webp',
     bio: 'Justin Mundy is the Director for Strategy for the MEA. Among other roles he is the Chairman of SLM Partners, Chairman of the Sustainability-linked Sovereign Debt Hub, Chairman of TRAFFIC International and Chairman of the Earthna Centre. He is also the Special Envoy of the Secretary General of the Commonwealth Secretariat and from 2007-2018, he was the Director of the then HRH The Prince of Wales’s International Sustainability Unit. Prior to that, he worked as an Adviser to the UK Government and the European Commission, having previously managed the World Bank’s forestry and biodiversity programmes in Russia and Central Asia.',
   },

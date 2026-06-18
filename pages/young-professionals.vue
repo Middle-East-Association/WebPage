@@ -22,10 +22,10 @@ const gallery = Array.from({ length: 6 }, (_, i) => `/images/ypg-${i + 1}.webp`)
 <template>
   <div>
     <!-- Hero -->
-    <section class="w-full bg-primary py-8 lg:py-12">
+    <section class="w-full bg-primary py-20 lg:py-32">
       <div class="max-w-[100rem] mx-auto px-8 lg:px-16">
         <div class="max-w-4xl">
-          <h1 class="font-heading text-3xl lg:text-4xl text-primary-foreground">Young Professionals Group</h1>
+          <h1 class="font-heading text-5xl lg:text-6xl mb-6 text-primary-foreground">Young Professionals Group</h1>
         </div>
       </div>
     </section>
