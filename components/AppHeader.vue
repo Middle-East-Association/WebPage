@@ -15,7 +15,7 @@ watch(() => route.path, () => (open.value = false))
   <header class="w-full bg-background border-b border-secondary-foreground/10 sticky top-0 z-50">
     <div class="max-w-[120rem] mx-auto py-4 px-6">
       <div class="flex items-center justify-between">
-        <NuxtLink to="/" class="flex items-center flex-shrink-0" aria-label="Home — The Middle East Association">
+        <NuxtLink to="/" class="flex items-center flex-shrink-0" aria-label="Home - The Middle East Association">
           <img
             src="/logo.png"
             :alt="`${site.name} logo`"

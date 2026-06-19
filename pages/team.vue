@@ -5,7 +5,7 @@ import { team } from '~/data/team'
 usePageSeo({
   title: 'Our Team',
   description:
-    'Meet the dedicated professionals who lead The Middle East Association — former ambassadors, business leaders and regional experts driving our mission to strengthen UK-MENA relations.',
+    'Meet the dedicated professionals who lead The Middle East Association: former ambassadors, business leaders and regional experts driving our mission to strengthen UK-MENA relations.',
 })
 
 // Person structured data — surfaces the team's credentials (former ambassadors, business

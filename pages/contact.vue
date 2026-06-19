@@ -17,7 +17,7 @@ usePageSeo({
         <div class="max-w-3xl">
           <h1 class="font-heading text-5xl lg:text-6xl mb-6 text-primary-foreground">Contact Us</h1>
           <p class="font-paragraph text-lg text-primary-foreground/90">
-            Get in touch with the Middle East Association — the UK's leading business association for trade and engagement with the Middle East and North Africa. We're based in London and welcome enquiries from prospective members, partners and event attendees.
+            Get in touch with the Middle East Association, the UK's leading business association for trade and engagement with the Middle East and North Africa. We're based in London and welcome enquiries from prospective members, partners and event attendees.
           </p>
         </div>
       </div>
