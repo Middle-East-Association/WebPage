@@ -66,7 +66,7 @@ export const upcomingEvents: UpcomingEvent[] = [
     startDate: '2026-07-02',
   },
   {
-    title: 'UK–GCC Free Trade Agreement Briefing',
+    title: 'UK-GCC Free Trade Agreement Briefing',
     category: 'Conference',
     date: 'Jul 06, 2026',
     startDate: '2026-07-06',

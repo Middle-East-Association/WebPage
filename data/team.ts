@@ -36,7 +36,7 @@ export const team: TeamMember[] = [
     role: 'Business and Events Manager',
     image: '/images/team-sophia-hopton.webp',
     email: 'Sophia.Hopton@the-mea.com',
-    bio: 'Sophia Hopton is the Business and Events Manager at the Middle East Association, where she plays a central role in developing the Association’s programme of high-level events, partnerships, and member engagement. Sophia has an academic background in politics, having studied at the University of Edinburgh, and holds a Master’s degree in Real Estate from the University of Reading. Prior to joining the MEA, she gained professional experience in wealth management and property investment in Chile, bringing a commercially focused and international perspective to her work. Fluent in English and Spanish, Sophia is particularly interested in strengthening UK–Middle East dialogue through thoughtful programming, trusted networks, and meaningful cross-sector engagement.',
+    bio: 'Sophia Hopton is the Business and Events Manager at the Middle East Association, where she plays a central role in developing the Association’s programme of high-level events, partnerships, and member engagement. Sophia has an academic background in politics, having studied at the University of Edinburgh, and holds a Master’s degree in Real Estate from the University of Reading. Prior to joining the MEA, she gained professional experience in wealth management and property investment in Chile, bringing a commercially focused and international perspective to her work. Fluent in English and Spanish, Sophia is particularly interested in strengthening UK-Middle East dialogue through thoughtful programming, trusted networks, and meaningful cross-sector engagement.',
   },
   {
     name: 'Adam Hosier',

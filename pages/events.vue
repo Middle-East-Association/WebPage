@@ -48,7 +48,7 @@ useHead({
                     addressCountry: 'GB',
                   },
                 },
-            description: `${e.category} event hosted by The Middle East Association, fostering UK–Middle East trade, business and policy dialogue.`,
+            description: `${e.category} event hosted by The Middle East Association, fostering UK-Middle East trade, business and policy dialogue.`,
             image: [`${base}/og-image.jpg`],
             organizer: { '@id': `${base}/#organization` },
             url: e.registerUrl || `${base}/events`,

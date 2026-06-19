@@ -2,7 +2,7 @@
 import { Globe, Users, Calendar, ArrowUpRight, ChevronRight } from 'lucide-vue-next'
 
 usePageSeo({
-  title: 'UK–Middle East Trade, Business & Policy',
+  title: 'UK-Middle East Trade, Business & Policy',
   description:
     'The Middle East Association connects the UK and the Middle East through trade, investment, policy and cultural dialogue. A trusted business association established in 1961.',
 })
@@ -110,11 +110,11 @@ const getInvolved = [
           <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight">
             The Middle East Association
             <span class="block font-paragraph font-light text-xl md:text-2xl lg:text-3xl text-white/80 mt-5 leading-snug">
-              UK–Middle East trade, business &amp; policy since 1961
+              UK-Middle East trade, business &amp; policy since 1961
             </span>
           </h1>
           <p class="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed font-light">
-            We foster dialogue, understanding, and collaboration across policy, business, and culture — connecting the UK and the Middle East through trade, investment, and partnership.
+            We foster dialogue, understanding, and collaboration across policy, business, and culture, connecting the UK and the Middle East through trade, investment, and partnership.
           </p>
         </div>
       </div>
@@ -159,7 +159,7 @@ const getInvolved = [
           <div v-for="(img, i) in featured" :key="img" class="overflow-hidden rounded-lg">
             <img
               :src="img"
-              :alt="`The Middle East Association — featured image ${i + 1}`"
+              :alt="`The Middle East Association featured image ${i + 1}`"
               width="854"
               height="640"
               loading="lazy"
