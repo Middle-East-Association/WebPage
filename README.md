@@ -38,8 +38,13 @@ npm run preview
      ```
      NUXT_SITE_URL = https://your-real-domain.com
      ```
-   - The default is `https://www.the-mea.com` (used only if the env var is unset).
-3. Deploy. No other configuration is required.
+   - The canonical host is the **apex** `https://the-mea.com` (no `www`). Set `NUXT_SITE_URL`
+     to exactly that — a `www` value poisons every canonical URL, the sitemap `<loc>` entries
+     and the robots.txt `Sitemap:` line. The code default (used only if the env var is unset)
+     is also `https://the-mea.com`.
+   - Add `www.the-mea.com` as a domain in Vercel → Domains and set it to **301 redirect to the
+     apex** (this also provisions the `www` SSL certificate; without it `www` is a dead host).
+3. Deploy (env-var changes need a fresh build — the site is prerendered). No other config required.
 
 Every push to `main` (or merged PR) triggers a fresh production deployment on Vercel automatically.
 
