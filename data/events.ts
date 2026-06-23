@@ -70,6 +70,7 @@ export const upcomingEvents: UpcomingEvent[] = [
     category: 'Conference',
     date: 'Jul 06, 2026',
     startDate: '2026-07-06',
+    registerUrl: 'https://buytickets.at/themiddleeastassociation/2275254',
   },
   {
     title: 'YPG Summer Drinks',
