@@ -90,6 +90,7 @@ export const upcomingEvents: UpcomingEvent[] = [
     category: 'Young Professionals',
     date: 'Sep 08, 2026',
     startDate: '2026-09-08',
+    registerUrl: 'https://buytickets.at/themiddleeastassociation/2277097',
   },
   {
     title: 'Iraq & Syria Business Reception with the MEA, Mansion House Reception',
