@@ -60,12 +60,6 @@ export const upcomingEvents: UpcomingEvent[] = [
     startDate: '2026-06-29',
   },
   {
-    title: 'YPG Dinner Party',
-    category: 'Young Professionals',
-    date: 'Jul 02, 2026',
-    startDate: '2026-07-02',
-  },
-  {
     title: 'UK-GCC Free Trade Agreement Briefing',
     category: 'Conference',
     date: 'Jul 06, 2026',
@@ -77,6 +71,7 @@ export const upcomingEvents: UpcomingEvent[] = [
     category: 'Young Professionals',
     date: 'Jul 16, 2026',
     startDate: '2026-07-16',
+    registerUrl: 'https://www.tickettailor.com/events/themiddleeastassociation/2255804',
   },
   {
     title: 'UK Roadshow 2026',
@@ -90,6 +85,7 @@ export const upcomingEvents: UpcomingEvent[] = [
     category: 'Young Professionals',
     date: 'Sep 08, 2026',
     startDate: '2026-09-08',
+    registerUrl: 'https://buytickets.at/themiddleeastassociation/2277097',
   },
   {
     title: 'Iraq & Syria Business Reception with the MEA, Mansion House Reception',
