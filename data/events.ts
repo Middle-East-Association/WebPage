@@ -54,19 +54,6 @@ export const flagshipEvents: FlagshipEvent[] = [
 // Ordered soonest-first by startDate.
 export const upcomingEvents: UpcomingEvent[] = [
   {
-    title: "Ambassadors' Reception",
-    category: 'Flagship',
-    date: 'Jun 29, 2026',
-    startDate: '2026-06-29',
-  },
-  {
-    title: 'UK-GCC Free Trade Agreement Briefing',
-    category: 'Conference',
-    date: 'Jul 06, 2026',
-    startDate: '2026-07-06',
-    registerUrl: 'https://buytickets.at/themiddleeastassociation/2275254',
-  },
-  {
     title: 'YPG Summer Drinks',
     category: 'Young Professionals',
     date: 'Jul 16, 2026',
@@ -74,10 +61,20 @@ export const upcomingEvents: UpcomingEvent[] = [
     registerUrl: 'https://www.tickettailor.com/events/themiddleeastassociation/2255804',
   },
   {
+    title: 'Gateway to MENA: Unlocking Business Opportunities Across the Middle East',
+    category: 'Regional Spotlight',
+    date: 'Jul 21, 2026',
+    startDate: '2026-07-21',
+    location: 'London',
+    city: 'London',
+    registerUrl: 'https://www.tickettailor.com/events/themiddleeastassociation/2243490',
+  },
+  {
     title: 'UK Roadshow 2026',
     category: 'Conference',
-    date: 'Jul 20, 2026',
-    startDate: '2026-07-20',
+    date: 'Nov 23-27, 2026',
+    startDate: '2026-11-23',
+    endDate: '2026-11-27',
     registerUrl: 'https://uk-roadshow.the-mea.com/',
   },
   {
