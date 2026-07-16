@@ -102,6 +102,7 @@ export const upcomingEvents: UpcomingEvent[] = [
     category: 'Flagship',
     date: 'Feb 03, 2027',
     startDate: '2027-02-03',
+    registerUrl: 'https://2fqy0h.share-eu1.hsforms.com/26pl4QZrRSaO7QWOlpkzJZA',
   },
   {
     title: 'MEA Technology Conference',
