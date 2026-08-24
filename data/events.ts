@@ -85,10 +85,28 @@ export const upcomingEvents: UpcomingEvent[] = [
     registerUrl: 'https://buytickets.at/themiddleeastassociation/2277097',
   },
   {
+    title: 'Troubled Waters: The Strait of Hormuz in Focus?',
+    category: 'Conference',
+    date: 'Sep 29, 2026',
+    startDate: '2026-09-29',
+    time: '14:00 – 16:00',
+    endDate: '2026-09-29',
+  },
+  {
     title: 'Iraq & Syria Business Reception with the MEA, Mansion House Reception',
     category: 'Regional Spotlight',
     date: 'Oct 06, 2026',
     startDate: '2026-10-06',
+  },
+  {
+    title: 'MEA Young Professionals: Connect & Network',
+    category: 'Young Professionals',
+    date: 'Oct 21, 2026',
+    startDate: '2026-10-21',
+    time: '18:30',
+    location: 'Commercial Tavern, London',
+    venue: 'Commercial Tavern',
+    city: 'London',
   },
   {
     title: 'Gala Dinner 2026',
