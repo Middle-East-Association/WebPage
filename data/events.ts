@@ -54,23 +54,7 @@ export const flagshipEvents: FlagshipEvent[] = [
 // Ordered soonest-first by startDate.
 export const upcomingEvents: UpcomingEvent[] = [
   {
-    title: 'YPG Summer Drinks',
-    category: 'Young Professionals',
-    date: 'Jul 16, 2026',
-    startDate: '2026-07-16',
-    registerUrl: 'https://www.tickettailor.com/events/themiddleeastassociation/2255804',
-  },
-  {
-    title: 'Gateway to MENA: Unlocking Business Opportunities Across the Middle East',
-    category: 'Regional Spotlight',
-    date: 'Jul 21, 2026',
-    startDate: '2026-07-21',
-    location: 'London',
-    city: 'London',
-    registerUrl: 'https://www.tickettailor.com/events/themiddleeastassociation/2243490',
-  },
-  {
-    title: 'UK Roadshow 2026',
+    title: 'UK Roadshow 2026 Gateway to MENA: Unlocking Business Opportunities Across the Middle East',
     category: 'Conference',
     date: 'Nov 23-27, 2026',
     startDate: '2026-11-23',
