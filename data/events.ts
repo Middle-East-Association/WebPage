@@ -75,6 +75,7 @@ export const upcomingEvents: UpcomingEvent[] = [
     startDate: '2026-09-29',
     time: '14:00 – 16:00',
     endDate: '2026-09-29',
+    registerUrl: 'https://buytickets.at/themiddleeastassociation/2385923',
   },
   {
     title: 'Iraq & Syria Business Reception with the MEA, Mansion House Reception',
