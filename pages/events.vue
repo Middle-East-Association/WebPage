@@ -118,8 +118,14 @@ useHead({
               <span v-if="ev.location" class="hidden md:flex items-center gap-1.5 text-sm text-primary/60">
                 <MapPin class="w-4 h-4 text-softaccent" />{{ ev.location }}
               </span>
+              <span
+                v-if="ev.soldOut"
+                class="inline-flex shrink-0 items-center rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-primary/70"
+              >
+                Sold Out
+              </span>
               <a
-                v-if="ev.registerUrl"
+                v-else-if="ev.registerUrl"
                 :href="ev.registerUrl"
                 target="_blank"
                 rel="noopener noreferrer"

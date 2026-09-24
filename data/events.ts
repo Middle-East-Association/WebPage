@@ -26,6 +26,7 @@ export interface UpcomingEvent {
   city?: string
   endDate?: string // ISO 8601
   isOnline?: boolean
+  soldOut?: boolean // when true, shows a "Sold Out" badge instead of the Register button
 }
 
 export const flagshipEvents: FlagshipEvent[] = [
@@ -76,12 +77,14 @@ export const upcomingEvents: UpcomingEvent[] = [
     time: '14:00 – 16:00',
     endDate: '2026-09-29',
     registerUrl: 'https://buytickets.at/themiddleeastassociation/2385923',
+    soldOut: true,
   },
   {
     title: 'Iraq & Syria Business Reception with the MEA, Mansion House Reception',
     category: 'Regional Spotlight',
     date: 'Oct 06, 2026',
     startDate: '2026-10-06',
+    soldOut: true,
   },
   {
     title: 'MEA Young Professionals: Connect & Network',
@@ -92,6 +95,13 @@ export const upcomingEvents: UpcomingEvent[] = [
     location: 'Commercial Tavern, London',
     venue: 'Commercial Tavern',
     city: 'London',
+  },
+  {
+    title: 'MEA YGP Autumn Drinks',
+    category: 'Young Professionals',
+    date: 'Oct 21, 2026',
+    startDate: '2026-10-21',
+    registerUrl: 'https://buytickets.at/themiddleeastassociation/2376913',
   },
   {
     title: 'Gala Dinner 2026',
