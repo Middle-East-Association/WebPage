@@ -9,6 +9,7 @@ export type EventCategory =
   | 'Young Professionals'
   | 'Regional Spotlight'
   | 'Conference'
+  | 'Webinar'
 
 export interface UpcomingEvent {
   title: string
@@ -63,28 +64,15 @@ export const upcomingEvents: UpcomingEvent[] = [
     registerUrl: 'https://uk-roadshow.the-mea.com/',
   },
   {
-    title: 'Diplomacy Unpacked: Insights, Careers & Connections with RUSI NextGen',
-    category: 'Young Professionals',
-    date: 'Sep 08, 2026',
-    startDate: '2026-09-08',
-    registerUrl: 'https://buytickets.at/themiddleeastassociation/2277097',
-  },
-  {
-    title: 'Troubled Waters: The Strait of Hormuz in Focus?',
-    category: 'Conference',
-    date: 'Sep 29, 2026',
-    startDate: '2026-09-29',
-    time: '14:00 – 16:00',
-    endDate: '2026-09-29',
-    registerUrl: 'https://buytickets.at/themiddleeastassociation/2385923',
-    soldOut: true,
-  },
-  {
-    title: 'Iraq & Syria Business Reception with the MEA, Mansion House Reception',
-    category: 'Regional Spotlight',
-    date: 'Oct 06, 2026',
-    startDate: '2026-10-06',
-    soldOut: true,
+    title: 'Yemen: Understanding the Current Landscape',
+    category: 'Webinar',
+    date: 'Oct 20, 2026',
+    startDate: '2026-10-20',
+    time: '14:00 – 15:00',
+    endDate: '2026-10-20',
+    location: 'Online',
+    isOnline: true,
+    registerUrl: 'https://www.tickettailor.com/events/themiddleeastassociation/2473064',
   },
   {
     title: 'MEA Young Professionals: Connect & Network',
@@ -95,20 +83,13 @@ export const upcomingEvents: UpcomingEvent[] = [
     location: 'Commercial Tavern, London',
     venue: 'Commercial Tavern',
     city: 'London',
-  },
-  {
-    title: 'MEA YGP Autumn Drinks',
-    category: 'Young Professionals',
-    date: 'Oct 21, 2026',
-    startDate: '2026-10-21',
     registerUrl: 'https://buytickets.at/themiddleeastassociation/2376913',
   },
   {
-    title: 'Gala Dinner 2026',
+    title: 'Gala Dinner 2027',
     category: 'Flagship',
-    date: 'Oct 12, 2026',
-    startDate: '2026-10-12',
-    registerUrl: 'https://buytickets.at/themiddleeastassociation/2160261',
+    date: 'Oct 18, 2027',
+    startDate: '2027-10-18',
   },
   {
     title: 'Cross-Party Parliamentary Reception (House of Commons)',
@@ -116,6 +97,12 @@ export const upcomingEvents: UpcomingEvent[] = [
     date: 'Feb 03, 2027',
     startDate: '2027-02-03',
     registerUrl: 'https://2fqy0h.share-eu1.hsforms.com/26pl4QZrRSaO7QWOlpkzJZA',
+  },
+  {
+    title: 'MEA Annual Lecture 2027 — Keynote by Frank Gardner',
+    category: 'Conference',
+    date: 'Mar 09, 2027',
+    startDate: '2027-03-09',
   },
   {
     title: 'MEA Technology Conference',

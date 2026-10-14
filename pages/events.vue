@@ -8,6 +8,7 @@ const categoryBadge: Record<EventCategory, string> = {
   'Young Professionals': 'bg-primary/10 text-primary',
   'Regional Spotlight': 'bg-secondary text-primary border border-bordersubtle',
   'Conference': 'bg-primary text-primary-foreground',
+  'Webinar': 'bg-softaccent/40 text-primary',
 }
 
 usePageSeo({
