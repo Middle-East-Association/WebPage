@@ -112,4 +112,4 @@ export const upcomingEvents: UpcomingEvent[] = [
   },
 ].sort((a, b) => a.startDate.localeCompare(b.startDate))
 
-export const pastEventImages: string[] = Array.from({ length: 12 }, (_, i) => `/images/event-${i + 1}.webp`)
+export const pastEventImages: string[] = Array.from({ length: 13 }, (_, i) => `/images/event-${i + 1}.webp`)
