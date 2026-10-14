@@ -112,4 +112,9 @@ export const upcomingEvents: UpcomingEvent[] = [
   },
 ].sort((a, b) => a.startDate.localeCompare(b.startDate))
 
-export const pastEventImages: string[] = Array.from({ length: 13 }, (_, i) => `/images/event-${i + 1}.webp`)
+// 12 images keeps the 3-column grid filling complete rows.
+// The MEA Gala Dinner 2026 photo leads; the remaining 11 are the prior gallery.
+export const pastEventImages: string[] = [
+  '/images/event-13.webp', // MEA Gala Dinner 2026
+  ...Array.from({ length: 11 }, (_, i) => `/images/event-${i + 1}.webp`),
+]
