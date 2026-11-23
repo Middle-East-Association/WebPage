@@ -4,7 +4,10 @@ import { site } from '~/data/site'
 const route = useRoute()
 const { url } = useSiteConfig()
 const base = (url || '').replace(/\/$/, '')
-const canonical = computed(() => base + route.path)
+// Normalise case and trailing slash. The server also answers variants like /events/ and
+// /EVENTS; without this, the canonical changes once JavaScript runs (/events -> /events/)
+// and Google may ignore conflicting canonicals and pick its own.
+const canonical = computed(() => base + (route.path.toLowerCase().replace(/\/+$/, '') || '/'))
 
 // Site-wide title template
 useHead({
