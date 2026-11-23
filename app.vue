@@ -2,12 +2,18 @@
 import { site } from '~/data/site'
 
 const route = useRoute()
+const router = useRouter()
 const { url } = useSiteConfig()
 const base = (url || '').replace(/\/$/, '')
-// Normalise case and trailing slash. The server also answers variants like /events/ and
-// /EVENTS; without this, the canonical changes once JavaScript runs (/events -> /events/)
-// and Google may ignore conflicting canonicals and pick its own.
-const canonical = computed(() => base + (route.path.toLowerCase().replace(/\/+$/, '') || '/'))
+// Build the canonical from the matched route, not the raw request path. The server also
+// answers variants like /events/ and /EVENTS; without this the canonical changes once
+// JavaScript runs (/events -> /events/) and Google may ignore it. Resolving by name maps
+// variants to the real path while keeping the case of any dynamic params.
+const canonical = computed(() => {
+  const path = route.name ? router.resolve({ name: route.name, params: route.params }).path : route.path
+  // Lookbehind keeps the trailing-slash strip linear (a plain /\/+$/ backtracks quadratically).
+  return base + (path.replace(/(?<!\/)\/+$/, '') || '/')
+})
 
 // Site-wide title template
 useHead({

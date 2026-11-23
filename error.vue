@@ -5,12 +5,9 @@ const props = defineProps<{ error: NuxtError }>()
 
 const is404 = computed(() => props.error?.statusCode === 404)
 
-// noindex only for real 404s. Error responses are never indexed anyway (4xx/5xx status);
-// the risk is a transient client-side failure (e.g. a stale JS chunk right after a deploy)
-// rendering this page on a valid URL, where a blanket noindex can drop a good page from Google.
 useHead({
   title: is404.value ? 'Page not found' : 'Something went wrong',
-  meta: is404.value ? [{ name: 'robots', content: 'noindex, nofollow' }] : [],
+  meta: [{ name: 'robots', content: 'noindex, nofollow' }],
 })
 </script>
 
